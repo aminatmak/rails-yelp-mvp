@@ -1,0 +1,15 @@
+<%= simple_form_for(@restaurant) do |r| %>
+  <%= r.error_notification %>
+  <%= r.error_notification message: r.object.errors[:base].to_sentence if r.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= r.input :name %>
+    <%= r.input :address %>
+    <%= r.input :phone_number %>
+    <%= r.input :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= r.button :submit, class: "btn btn-success" %>
+  </div>
+<% end %>
